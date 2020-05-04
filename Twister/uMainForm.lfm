@@ -1,0 +1,13 @@
+object MainForm: TMainForm
+  Left = 452
+  Height = 480
+  Top = 250
+  Width = 640
+  Caption = 'MainForm'
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

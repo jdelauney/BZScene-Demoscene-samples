@@ -1,0 +1,17 @@
+object MainForm: TMainForm
+  Left = 345
+  Height = 768
+  Top = 250
+  Width = 1024
+  Caption = 'BZScene - Lens Demo'
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnMouseMove = FormMouseMove
+  OnMouseWheelDown = FormMouseWheelDown
+  OnMouseWheelUp = FormMouseWheelUp
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

@@ -1,0 +1,13 @@
+object MainForm: TMainForm
+  Left = 350
+  Height = 768
+  Top = 250
+  Width = 1024
+  Caption = 'BZScene Demo - Planar DeformationZ'
+  OnCloseQuery = FormCloseQuery
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

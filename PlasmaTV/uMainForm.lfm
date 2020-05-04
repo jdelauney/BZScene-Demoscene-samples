@@ -1,0 +1,16 @@
+object MainForm: TMainForm
+  Left = 412
+  Height = 768
+  Top = 250
+  Width = 1024
+  BorderStyle = bsSingle
+  Caption = 'BZScene Plasma TV Demo'
+  KeyPreview = True
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+end

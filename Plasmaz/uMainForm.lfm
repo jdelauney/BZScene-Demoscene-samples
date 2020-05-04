@@ -1,0 +1,23 @@
+object MainForm: TMainForm
+  Left = 350
+  Height = 768
+  Top = 250
+  Width = 1024
+  BorderStyle = bsSingle
+  Caption = 'Demo Plasma '
+  OnCloseQuery = FormCloseQuery
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object BZThreadTimer1: TBZThreadTimer
+    Interval = 10
+    KeepAlive = True
+    Accurate = True
+    Priority = tpHigher
+    OnTimer = BZThreadTimer1Timer
+    left = 61
+    top = 41
+  end
+end

@@ -1,0 +1,25 @@
+object MainForm: TMainForm
+  Left = 451
+  Height = 768
+  Top = 250
+  Width = 1024
+  BorderStyle = bsSingle
+  Caption = 'MainForm'
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object BZScreenMode: TBZScreenMode
+    XRes = 1024
+    YRes = 768
+    BPP = 32
+    Frequency = 60
+    FullScreenForm = True
+    left = 28
+    top = 28
+  end
+end
