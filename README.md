@@ -10,5 +10,7 @@ Réalisées avec Lazarus / FPC et la bibliothèque BZScene.
 
 Vous pouvez visualiser une capture d'écran dans chaque dossier
 
+![Plasma](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/AnotherPlasma/screenshot.jpg)
+
 
 
