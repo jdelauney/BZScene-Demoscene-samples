@@ -10,7 +10,18 @@ Réalisées avec Lazarus / FPC et la bibliothèque BZScene.
 
 Vous pouvez visualiser une capture d'écran dans chaque dossier
 
+Some examples / quelques exemples
 ![Plasma](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/AnotherPlasma/screenshot.jpg)
+
+![CircularDistortion](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/CircleDistortion/screenshot.jpg)
+
+![Realfire](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/RealFire/screenshot.jpg)
+
+![Shadeblobs](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/ShadeBlobs/screenshot.jpg)
+
+![plannardeformation](https://raw.githubusercontent.com/jdelauney/BZScene-Demoscene-samples/master/PlanarDeformationZ/screenshot01.jpg)
+
+
 
 
 
