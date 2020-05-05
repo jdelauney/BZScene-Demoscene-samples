@@ -8,6 +8,8 @@ _______________________________________________________
 Démonstration d'animations graphique en temps réel 100% software alla mode "old school" issues de la [demoscene](https://en.wikipedia.org/wiki/Demoscene)comme dans les années 80/90. 
 Réalisées avec Lazarus / FPC et la bibliothèque BZScene.
 
+[Download BZScene / Téléchargement de BZScene](https://github.com/jdelauney/BZScene)
+
 Vous pouvez visualiser une capture d'écran dans chaque dossier
 
 Some examples / quelques exemples
