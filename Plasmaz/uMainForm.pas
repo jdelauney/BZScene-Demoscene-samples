@@ -15,7 +15,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs,
-  BZVectorMath, BZColors, BZGraphic, BZBitmap, BZCadencer, BZThreadTimer, BZStopWatch;
+  BZVectorMath, BZColors, BZGraphic, BZBitmap, BZCadencer, BZThreadTimer, BZStopWatch, BZClasses;
 
 Const
   cAmp  : Integer = 118;
@@ -28,21 +28,20 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
-    BZThreadTimer1 : TBZThreadTimer;
-    procedure BZThreadTimer1Timer(Sender : TObject);
+    BZCadencer: TBZCadencer;
+    procedure BZCadencerProgress(Sender: TObject; const deltaTime,
+      newTime: Double);
     procedure FormCloseQuery(Sender : TObject; var CanClose : boolean);
     procedure FormKeyPress(Sender : TObject; var Key : char);
     procedure FormShow(Sender : TObject);
     procedure FormDestroy(Sender : TObject);
   private
     FBitmapBuffer : TBZBitmap;
-    FCadencer : TBZCadencer;
     FStopWatch : TBZStopWatch;
   protected
     CosLUT, SinLUT : Array[0..255] of Byte;
     FrameCounter :DWord;
     FPSCount : Single;
-    procedure CadencerProgress(Sender : TObject; const {%H-}deltaTime, newTime : Double);
   public
     Procedure RenderScene(aDeltaTime: DWord);
     Procedure InitScene;
@@ -90,10 +89,6 @@ begin
     CosLUT[i]:= (round(cos(c2pi*(i*cInv255))*cAmp2)+cVarb);
   end;
 
-  FCadencer := TBZCadencer.Create(self);
-  FCadencer.Enabled := False;
-  FCadencer.OnProgress := @CadencerProgress;
-
   FStopWatch := TBZStopWatch.Create(self);
 
   Randomize;
@@ -138,24 +133,17 @@ begin
 
 end;
 
-procedure TMainForm.CadencerProgress(Sender : TObject; const deltaTime, newTime : Double);
-begin
-  RenderScene(Round(NewTime*60));
-  FBitmapBuffer.DrawToCanvas(Canvas, ClientRect);
-  Caption:='BZScene PlasmaZ Demo : '+Format('%.*f FPS', [3,FStopWatch.getFPS]);
-end;
-
 procedure TMainForm.FormCloseQuery(Sender : TObject; var CanClose : boolean);
 begin
   FStopWatch.Stop;
-  FCadencer.Enabled := False;
-  BZThreadTimer1.Enabled := False;
+  BZCadencer.Enabled := False;
   CanClose := True;
 end;
 
-procedure TMainForm.BZThreadTimer1Timer(Sender : TObject);
+procedure TMainForm.BZCadencerProgress(Sender: TObject; const deltaTime,
+  newTime: Double);
 begin
-  RenderScene(FrameCounter);
+  RenderScene(Round(NewTime*60));
   FBitmapBuffer.DrawToCanvas(Canvas, ClientRect);
   Caption:='BZScene PlasmaZ Demo : '+Format('%.*f FPS', [3,FStopWatch.getFPS]);
 end;
@@ -171,13 +159,12 @@ begin
   DoubleBuffered:=true;
   FStopWatch.Start;
   //BZThreadTimer1.Enabled := True;
-  FCadencer.Enabled := True;
+  BZCadencer.Enabled := True;
 end;
 
 procedure TMainForm.FormDestroy(Sender : TObject);
 begin
   FreeAndNil(FStopWatch);
-  FreeAndNil(FCadencer);
   FreeAndNil(FBitmapBuffer);
 end;
 
