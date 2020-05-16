@@ -10,14 +10,13 @@ object MainForm: TMainForm
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.0.6.0'
-  object BZThreadTimer1: TBZThreadTimer
-    Interval = 10
-    KeepAlive = True
-    Accurate = True
-    Priority = tpHigher
-    OnTimer = BZThreadTimer1Timer
-    left = 61
-    top = 41
+  object BZCadencer: TBZCadencer
+    Enabled = False
+    MaxDeltaTime = 0
+    MinDeltaTime = 0
+    FixedDeltaTime = 0
+    OnProgress = BZCadencerProgress
+    left = 168
+    top = 141
   end
 end

@@ -15,7 +15,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs,
-  BZVectorMath, BZColors, BZGraphic, BZBitmap, BZStopWatch, BZCadencer, {%H-}BZBitmapIO, BZParallelThread;
+  BZVectorMath, BZColors, BZGraphic, BZBitmap, BZStopWatch, BZCadencer, BZParallelThread, BZBitmapIO;
 
 type
 
@@ -34,9 +34,9 @@ type
   protected
     FTexture : TBZBitmap;
 
-
+    FUVMapLUT : TBZVector2f2DMap;
     {$CODEALIGN RECORDMIN=16}
-     FUVMapLUT : TBZVector2f2DMap;
+
      //FUVMapLut : Array[0..1023,0..767] of TBZVector2f;
      pt0, {pt1,} ptc, pts, ptb : TBZVector2f;
     {$CODEALIGN RECORDMIN=4}
@@ -134,10 +134,10 @@ Const
   cOne2f : TBZVector2f = (x:1.0;y:1.0);
 {$CODEALIGN CONSTMIN=4}
 var
-  i,j,n,m : integer;
+  i,j : integer; //,n,m
   a,r : single;
   {$CODEALIGN VARMIN=16}
-  P, P1, UV, T : TBZVector2f;
+  P, P1, UV : TBZVector2f; //, T
   {$CODEALIGN VARMIN=4}
 begin
   //FCadencer.Enabled:=False;
@@ -363,14 +363,14 @@ end;
 
 procedure TMainForm.RenderScene(iTime : Double);
 var
-  {$CODEALIGN VARMIN=16}
-  {pt0,} pt1{, ptc, pts, ptb} : TBZVector2f;
-  pt : TBZVector2i;
-  {$CODEALIGN VARMIN=4}
+  {.$CODEALIGN VARMIN=16}
+  //{pt0,} pt1{, ptc, pts, ptb} : TBZVector2f;
+  //pt : TBZVector2i;
+  {.$CODEALIGN VARMIN=4}
 
-  FragColor : TBZColor;
+  //FragColor : TBZColor;
   {dc,}aTime {,alphascale}, st, ct : Single;
-  i,j: integer;
+  //i,j: integer;
 begin
    aTime := iTime;
   FBitmapBuffer.Clear(clrBlack);

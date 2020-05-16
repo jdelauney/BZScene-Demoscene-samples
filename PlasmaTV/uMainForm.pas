@@ -76,7 +76,7 @@ begin
   Buffer.Clear(clrBlack);
 
   ImageScanLine:= TBZBitmap.Create;
-  ImageScanLine.LoadFromFile('..\..\..\..\media\images\TVScanLine.png');
+  ImageScanLine.LoadFromFile('../../../../media/images/TVScanline.png');
 
   //PlasmaSurface:= TBZBitmap.Create(256,256);
   PlasmaSurface:= TBZBitmap.Create(Width,Height);
